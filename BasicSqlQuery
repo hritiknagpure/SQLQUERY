@@ -1,0 +1,43 @@
+
+SET SQL_SAFE_UPDATES = 0;
+select * from employe limit 2;
+select * from employe;
+select * from employe order by empid desc limit 2,2;
+select * from employe where lastname is null;
+select * from employe where name like '___n%';
+select * from employe where name like '%h__';
+select * from employe where name like '%y%';
+select * from employe where empid=1 or empid=4;
+select * from employe where empid not in(1,"dj");
+select * from employe where empid not between 5 and 6;
+select * from employe where name like "r%";
+select  empid,name,lastname from employe where empid in(4,7);
+select * from employe where name like "hr%";
+select * from employe where name  not like "r%k";
+select * from employe where lastname like "%u__";
+select * from employe where name regexp 'tik$';
+select * from employe;
+select * from employe order by empid desc;
+select * from employe
+where lastname='nagpure'
+order by name desc;
+select * from employe
+order by name,lastname;
+select distinct lastname from employe;
+select * from employe;
+select * from employe
+ limit 2,2;
+select * from employe where lastname is null;
+select * from employe;
+select * from employe limit 2,4;
+select * from employe;
+
+select count(name) as name from employe;
+select sum(empid) from employe;
+select max(empid) from employe;
+select * from employe;
+//second largest empid
+select max(empid) from employe where empid<(select max(empid) from employe);
+
+select * from employe where empid=
+(select max(empid) from employe where empid<(select max(empid) from employe));
